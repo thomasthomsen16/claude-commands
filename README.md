@@ -24,6 +24,38 @@ Claude commands are custom slash commands that extend Claude Code's functionalit
   - Creates user-friendly guides with step-by-step instructions and troubleshooting tips
   - Organizes output into `docs/dev/` and `docs/user/` directories
 
+### `/parallel-work`
+- **File**: `parallel-work.md`
+- **Purpose**: Sets up Git worktrees for developing multiple features in parallel for an expense tracker app
+- **Usage**: `/parallel-work <feature-list>`
+- **What it does**:
+  - Creates separate Git worktrees for each feature with isolated development environments
+  - Sets up branches named `feature/[feature-name]` for each feature
+  - Provides guidance on dividing work into separate features
+  - Lists all created worktrees for confirmation
+
+### `/parallel-agents`
+- **File**: `parallel-agents.md`
+- **Purpose**: Advanced parallel development using Git worktrees with automated subagents
+- **Usage**: `/parallel-agents <feature-list>`
+- **What it does**:
+  - **Phase 1**: Creates worktrees in parent directory for each feature
+  - **Phase 2**: Spawns subagents to work on each feature independently
+  - **Phase 3**: Monitors parallel development and ensures completion
+  - **Phase 4**: Collects work summaries and provides integration guidance
+  - Each subagent implements full functionality with testing and creates detailed work summaries
+
+### `/integrate-parallel-work`
+- **File**: `integrate-parallel-work.md`
+- **Purpose**: Safely integrates features developed in parallel worktrees
+- **Usage**: `/integrate-parallel-work <feature-list>`
+- **What it does**:
+  - Creates an integration branch called "integration/parallel-features"
+  - Merges each feature branch into the integration branch
+  - Resolves merge conflicts and tests feature compatibility
+  - Runs full test suite to ensure nothing is broken
+  - Merges to main and cleans up branches after successful integration
+
 ## How to Use
 
 1. Place these command files in your `~/.claude/commands/` directory

@@ -1,24 +1,24 @@
 I want to develop features in parallel using Git worktrees and subagents: $ARGUMENTS
 
-You are in the parent folder of the main repo. You will need to change to the main repo
-folder to create the worktrees.
+You are working from within the project directory. This command will create worktrees in the parent directory to develop features in parallel.
 
 Please execute this complete workflow:
 
 PHASE 1 - SETUP WORKTREES:
 For each feature mentioned:
-1. Create a worktree at ../expense-tracker-[feature-name] with branch feature/[feature-name]
-2. Set up the development environment in each worktree (if needed)
-3. List all worktrees created
+1. Get the current project directory name to use as base name
+2. Create a worktree at ../{project-name}-[feature-name] with branch feature/[feature-name]
+3. Set up the development environment in each worktree (if needed)
+4. List all worktrees created
 
 PHASE 2 - SPAWN SUBAGENTS:
 For each feature, run a subagent in parallel with these instructions:
-- You are working in the expense-tracker-[feature-name] worktree directory
+- You are working in the {project-name}-[feature-name] worktree directory
 - This is a completely isolated development environment
 - Implement the [feature-name] feature with full functionality
 - Include proper testing and error handling
 - Compile and run tests, but don't attempt to run the application (e.g., don't do "npm run" or "npm run dev &", etc.) 
-- When complete, write a detailed summary in [feature-name].work.txt in the main expense-tracker-ai directory
+- When complete, write a detailed summary in [feature-name].work.txt in the main project directory
 - The summary should include: what was implemented, files created/modified, dependencies added, testing approach, and integration notes
 
 PHASE 3 - COORDINATION:
